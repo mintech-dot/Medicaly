@@ -59,57 +59,24 @@
 
 
 </div>
-
 <div class="grid gap-6 sm:grid-cols-2 container p-5 mx-auto lg:grid-cols-3 ">
+@foreach($joinus as $p)
       <div class="relative group">
           <div aria-hidden="true" class="absolute inset-0 rounded-xl shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-110"></div>
-          <div class="relative text-center space-y-4 p-6 md:p-8">
-              <img src="{{ URL('img/orders.svg') }}" class="w-16 m-auto" width="512" height="512" >
-              <h4 class="text-2xl text-gray-600 font-medium transition group-hover:text-[#044D5E]">Doctor Name</h4>
-              <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-              <a href="orders" class="ml-4 inline-flex">
-              <button class=" text-white bg-[#044D5E] border-0 py-2 px-6 focus:outline-none hover:bg-[#06687e] rounded text-lg">Order now</button>  
-              </a>
+            <div class="relative text-center space-y-4 p-6 md:p-8">
+                <img src="{{ URL('img/orders.svg') }}" class="w-16 m-auto" width="512" height="512" >
+                <h4 class="text-2xl text-gray-600 font-medium transition group-hover:text-[#044D5E]">{{$p->name}}</h4>
+                <p class="text-gray-600">{{$p->description}}</p>
+                <a href="orders" class="ml-4 inline-flex">
+                <button class=" text-white bg-[#044D5E] border-0 py-2 px-6 focus:outline-none hover:bg-[#06687e] rounded text-lg">Order now</button>  
+                </a>
+            </div>
           </div>
-      </div>
-      <div class="relative group">
-          <div aria-hidden="true" class="absolute inset-0 rounded-xl shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-110"></div>
-          <div class="relative text-center space-y-4 p-6 md:p-8">
-              <img src="{{ URL('img/orders.svg') }}" class="w-16 m-auto" width="512" height="512" >
-              <h4 class="text-2xl text-gray-600 font-medium transition group-hover:text-[#044D5E]">Doctor Name</h4>
-              <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-              <a href="orders" class="ml-4 inline-flex">
-              <button class=" text-white bg-[#044D5E] border-0 py-2 px-6 focus:outline-none hover:bg-[#06687e] rounded text-lg">Order now</button>  
-              </a>
-          </div>
-      </div>
-      <div class="relative group">
-          <div aria-hidden="true" class="absolute inset-0 rounded-xl shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-110"></div>
-          <div class="relative text-center space-y-4 p-6 md:p-8">
-              <img src="{{ URL('img/orders.svg') }}" class="w-16 m-auto" width="512" height="512" >
-              <h4 class="text-2xl text-gray-600 font-medium transition group-hover:text-[#044D5E]">Doctor Name</h4>
-              <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-              <a href="orders" class="ml-4 inline-flex">
-              <button class=" text-white bg-[#044D5E] border-0 py-2 px-6 focus:outline-none hover:bg-[#06687e] rounded text-lg">Order now</button>  
-              </a>
-          </div>
+          @endforeach
+
       </div>
 
-      <div class="relative group">
-          <div aria-hidden="true" class="absolute inset-0 rounded-xl shadow-xl transition duration-300 group-hover:scale-105 lg:group-hover:scale-110"></div>
-          <div class="relative text-center space-y-4 p-6 md:p-8">
-              <img src="{{ URL('img/orders.svg') }}" class="w-16 m-auto" width="512" height="512" >
-              <h4 class="text-2xl text-gray-600 font-medium transition group-hover:text-[#044D5E]">Doctor Name</h4>
-              <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-              <a href="orders" class="ml-4 inline-flex">
-              <button class=" text-white bg-[#044D5E] border-0 py-2 px-6 focus:outline-none hover:bg-[#06687e] rounded text-lg">Order now</button>  
-              </a>
-          </div>
-      </div>
-    
-  </div>
-  </div>
-
+</div>
 
   <section class="text-gray-600 body-font relative">
   <div class="container px-5 py-24 mx-auto">
