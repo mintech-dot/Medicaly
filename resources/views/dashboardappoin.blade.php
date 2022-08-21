@@ -85,20 +85,20 @@
                     
                     <div class="flex flex-col justify-center md:justify-start my-auto pt-9 md:pt-0 px-9 ">
                     @foreach($ordersUpdate as $p)    
-                    <form class="flex flex-col pt-3 " action="dashboardappoin/update" method="post">
+                    <form class="flex flex-col pt-3 " action="/dashboardappoin/update" method="post">
                         @csrf
                         <div class="flex flex-wrap -mx-3 mb-6">
                                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                                       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                                     Full name
                                       </label>
-                                      <input type="text" name="fname" value="{{$p->name}}" class="text-gray-700 mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-blue-700 focus:ring-blue-700 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Full name" />                        
+                                      <input type="text" name="fname" value="{{$p->full_name}}" class="text-gray-700 mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-blue-700 focus:ring-blue-700 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Full name" />                        
                                 </div>
                                   <div class="w-full md:w-1/2 px-3">
                                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                                     Address
                                     </label>
-                                   <input type="text" name="address" value="{{$p->place}}" class="text-gray-700 mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-blue-700 focus:ring-blue-700 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Address" />                        
+                                   <input type="text" name="address" value="{{$p->address}}" class="text-gray-700 mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-blue-700 focus:ring-blue-700 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Address" />                        
                                  </div>
                                 </div>
                                 
