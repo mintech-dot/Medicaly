@@ -29,6 +29,8 @@ class DashboardController extends Controller
     public function create()
     {
         //
+        $joinus = DB::table('joinus')->get();
+        return view('welcome' , ['joinus' => $joinus]);
     }
 
     /**
