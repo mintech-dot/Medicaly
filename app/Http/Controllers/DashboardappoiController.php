@@ -18,7 +18,7 @@ class DashboardappoiController extends Controller
         $orders = DB::table('orders')->get();
         
         // mengirim data pegawai ke view index
-        return view('dashboard', ['orders' => $orders] , ['ordersUpdate' => $ordersUpdate]);
+        return view('dashboardappoin', ['orders' => $orders] , ['ordersUpdate' => $ordersUpdate]);
     }
 
     /**
@@ -84,20 +84,19 @@ class DashboardappoiController extends Controller
         try{
             
             DB::table('orders')->where('id', $request->id)->update([
-                'name' => $request->fname,
-                'place' => $request->address,
+                'full_name' => $request->fname,
+                'address' => $request->address,
                 'p_number' => $request->pnumber,
-                'email' => $request->email,
-                'worktime' => $request->worktime,
-                'description' => $request->description
+                'med' => $request->med,
+                'date' => $request->date,
             ]);
     
-            return redirect('/dashboardappoin');
+            return redirect('dashboardappoin');
     
             }
     
             catch (\Exception $e) {
-                return redirect('/dashboardappoin');
+                return redirect('dashboardappoin');
             }
     }
 
@@ -112,6 +111,6 @@ class DashboardappoiController extends Controller
         //
         DB::table('orders')->where('id', $id)->delete();
 
-        return redirect('/dashboardappoin');
+        return redirect('dashboardappoin');
     }
 }
