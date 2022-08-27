@@ -66,18 +66,22 @@
                         <div x-show="dropdownOpen"
                             class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10"
                             style="display: none;">
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-600 hover:text-white">Profile</a>
-                            
-                            <a href="../logout.php"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-600 hover:text-white">Logout</a>
-                        </div>
+                            <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-responsive-nav-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-responsive-nav-link>
+                </form> 
+            </div>
                     </div>
                 </div>
             </header>
             <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
                 <div class="container mx-auto px-6 py-8">
-                    <h3 class="text-gray-700 text-3xl font-medium text-center">Sponsors</h3>
+                    <h3 class="text-gray-700 text-3xl font-medium text-center">My Products</h3>
                     <div>
                     <p class="text-center text-lg text-red-500"> </p>
                     </div>
