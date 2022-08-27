@@ -45,6 +45,8 @@ Route::get('/process', function () {
     return view('process');
 });
 
+Route::get('/orders/{id}', [DashboardController::class , 'edit']);
+
 
 Route::post('/joinus/store', [JoinusController::class , 'store']);
 Route::post('/process', [JoinusController::class , 'index']);
@@ -53,16 +55,24 @@ Route::post('/orders/store', [OrdersController::class , 'store']);
 Route::post('/done', [OrdersController::class , 'index']);
 
 
-Route::get('/dashboard', [DashboardController::class , 'index']);
 Route::get('/dashboard/edit/{id}', [DashboardController::class , 'edit']);
 Route::post('/dashboard/update', [DashboardController::class , 'update']);
 Route::get('/dashboard/delete/{id}', [DashboardController::class , 'destroy']);
 
 
 
-Route::get('/dashboardappoin', [DashboardappoiController::class , 'index']);
 Route::get('/dashboardappoin/edit/{id}', [DashboardappoiController::class , 'edit']);
 Route::post('/dashboardappoin/update', [DashboardappoiController::class , 'update']);
 Route::get('/dashboardappoin/delete/{id}', [DashboardappoiController::class , 'destroy']);
 
 Route::get('/', [DashboardController::class , 'create']);
+
+Route::get('/dashboardappoin', [DashboardappoiController::class , 'index'])
+->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
+Route::get('/dashboard', [DashboardController::class , 'index'])
+->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
