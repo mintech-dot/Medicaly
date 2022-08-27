@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use App\Services\PayUService\Exception;
 
-class DashboardappoiController extends Controller
+
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +17,27 @@ class DashboardappoiController extends Controller
     public function index()
     {
         //
-        $ordersUpdate = array();
-        $orders = DB::table('orders')->get();
+        $joinusUpdate = array();
+        $joinus = DB::table('joinus')->get();
         
         // mengirim data pegawai ke view index
-        return view('dashboardappoin', ['orders' => $orders] , ['ordersUpdate' => $ordersUpdate]);
+        return view('dashboard', ['joinus' => $joinus] , ['joinusUpdate' => $joinusUpdate]);
     }
-    
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+        $joinus = DB::table('joinus')->where('confirmation', '=', 'on')->get();
+        return view('welcome' , compact('joinus'));
+    }
+
+
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -32,11 +47,11 @@ class DashboardappoiController extends Controller
     public function edit($id)
     {
         //
-        $ordersUpdate = DB::table('orders') ->where('id', $id)->get();
-        $orders = DB::table('orders')->get();
+        $joinusUpdate = DB::table('joinus') ->where('id', $id)->get();
+        $joinus = DB::table('joinus')->get();
 
         // mengirim data pegawai ke view index
-        return view('dashboardappoin', ['ordersUpdate' => $ordersUpdate] , ['orders' => $orders] );
+        return view('dashboard', ['joinusUpdate' => $joinusUpdate] , ['joinus' => $joinus] );
 
     }
 
@@ -53,20 +68,22 @@ class DashboardappoiController extends Controller
         //
         try{
             
-            DB::table('orders')->where('id', $request->id)->update([
-                'full_name' => $request->fname,
-                'address' => $request->address,
+            DB::table('joinus')->where('id', $request->id)->update([
+                'name' => $request->fname,
+                'place' => $request->address,
                 'p_number' => $request->pnumber,
-                'med' => $request->med,
-                'date' => $request->date,
+                'email' => $request->email,
+                'worktime' => $request->worktime,
+                'description' => $request->description,
+                'confirmation' => $request->isactive
             ]);
     
-            return redirect('dashboardappoin');
+            return redirect('/dashboard');
     
             }
     
             catch (\Exception $e) {
-                return redirect('dashboardappoin');
+                return redirect('/dashboard');
             }
     }
 
@@ -79,9 +96,8 @@ class DashboardappoiController extends Controller
     public function destroy($id)
     {
         //
-        DB::table('orders')->where('id', $id)->delete();
+        DB::table('joinus')->where('id', $id)->delete();
 
-        return redirect('dashboardappoin');
+        return redirect('/dashboard');
     }
 }
-
