@@ -5,6 +5,7 @@ use App\Http\Controllers\JoinusController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\DashboardappoiController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,7 +60,7 @@ Route::get('/dashboard/edit/{id}', [DashboardController::class , 'edit']);
 Route::post('/dashboard/update', [DashboardController::class , 'update']);
 Route::get('/dashboard/delete/{id}', [DashboardController::class , 'destroy']);
 
-
+Route::post('/contact', [MailController::class, 'store']);
 
 Route::get('/dashboardappoin/edit/{id}', [DashboardappoiController::class , 'edit']);
 Route::post('/dashboardappoin/update', [DashboardappoiController::class , 'update']);
