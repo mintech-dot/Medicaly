@@ -23,7 +23,7 @@
 
     
                 <a class="flex items-center mt-4 py-2 px-6 bg-gray-700 bg-opacity-25 text-gray-100"
-                    href="/dashboard/appointments">
+                    href="/dashboardappoin">
                     <span class="mx-3">Appointments</span>
                 </a>
     
@@ -67,11 +67,16 @@
                         <div x-show="dropdownOpen"
                             class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10"
                             style="display: none;">
-                            <a href="#"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-600 hover:text-white">Profile</a>
-                            
-                            <a href="../logout.php"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-600 hover:text-white">Logout</a>
+                            <!-- Authentication -->
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-responsive-nav-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-responsive-nav-link>
+                </form>   
                         </div>
                     </div>
                 </div>
@@ -83,15 +88,7 @@
                     <p class="text-center text-lg text-red-500"> </p>
                     </div>
                     <div class="container w-full md:w-4/5 xl:w-3/5  mx-auto px-2">
-                    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-</di>
-@endif
+                    
                     <div class="flex flex-col justify-center md:justify-start my-auto pt-9 md:pt-0 px-9 ">
                     @foreach($joinusUpdate as $p)    
                     
@@ -140,11 +137,20 @@
                                       </label>
                                       <input type="text" name="description" value="{{$p->description}}" class="text-gray-700 mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-blue-700 focus:ring-blue-700 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Additional information" required/>                        
                                   </div>
+                                  <div class="w-full md:w-1/2 px-3 pt-6">
+                                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                                      Activation
+                                      </label>
+                                    <select name="isactive" class="bg-gray-50 text-right border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#0139CE] focus:border-[#0139CE] block w-full p-2.5 ">
+                                    <option>off </option>
+                                    <option>On </option>
+                                    </select>
+                                  </div>
                                   </div>
                                   
                                 
                                   <input type="hidden" name="id" value="{{$p->id}}">
-                                  <input type="submit" value="Update" class="bg-blue-700 text-white font-bold text-lg hover:bg-blue-500 p-2 mt-8 rounded-lg">
+                                  <input type="submit" value="Update" class="bg-blue-700 text-white font-bold text-lg hover:bg-blue-500 p-2 mt-4 rounded-lg">
                                
                               </form>
                               @endforeach
