@@ -19,7 +19,7 @@ class DashboardappoiController extends Controller
         $ordersUpdate = array();
         $orders = DB::table('orders')->get();
         
-        // mengirim data pegawai ke view index
+        // send data to view index
         return view('dashboardappoin', ['orders' => $orders] , ['ordersUpdate' => $ordersUpdate]);
     }
     
@@ -35,7 +35,7 @@ class DashboardappoiController extends Controller
         $ordersUpdate = DB::table('orders') ->where('id', $id)->get();
         $orders = DB::table('orders')->get();
 
-        // mengirim data pegawai ke view index
+        //send data to view index
         return view('dashboardappoin', ['ordersUpdate' => $ordersUpdate] , ['orders' => $orders] );
 
     }
