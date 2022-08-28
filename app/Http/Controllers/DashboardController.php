@@ -20,7 +20,7 @@ class DashboardController extends Controller
         $joinusUpdate = array();
         $joinus = DB::table('joinus')->get();
         
-        // mengirim data pegawai ke view index
+        // send data to view index
         return view('dashboard', ['joinus' => $joinus] , ['joinusUpdate' => $joinusUpdate]);
     }
 
@@ -50,7 +50,7 @@ class DashboardController extends Controller
         $joinusUpdate = DB::table('joinus') ->where('id', $id)->get();
         $joinus = DB::table('joinus')->get();
 
-        // mengirim data pegawai ke view index
+        //send data to view index
         return view('dashboard', ['joinusUpdate' => $joinusUpdate] , ['joinus' => $joinus] );
 
     }
