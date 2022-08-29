@@ -46,28 +46,34 @@ Route::get('/process', function () {
     return view('process');
 });
 
+/* select all approved data */
+Route::get('/', [DashboardController::class , 'create']);
+
 Route::get('/orders/{id}', [DashboardController::class , 'edit']);
 
-
+/*joinus form*/
 Route::post('/joinus/store', [JoinusController::class , 'store']);
 Route::post('/process', [JoinusController::class , 'index']);
 
+/*orders form*/
 Route::post('/orders/store', [OrdersController::class , 'store']);
 Route::post('/done', [OrdersController::class , 'index']);
 
-
+/* Sponsor Dashboard */
 Route::get('/dashboard/edit/{id}', [DashboardController::class , 'edit']);
 Route::post('/dashboard/update', [DashboardController::class , 'update']);
 Route::get('/dashboard/delete/{id}', [DashboardController::class , 'destroy']);
 
+/* contact us form */
 Route::post('/contact', [MailController::class, 'store']);
 
+/*appointement dashboard*/
 Route::get('/dashboardappoin/edit/{id}', [DashboardappoiController::class , 'edit']);
 Route::post('/dashboardappoin/update', [DashboardappoiController::class , 'update']);
 Route::get('/dashboardappoin/delete/{id}', [DashboardappoiController::class , 'destroy']);
 
-Route::get('/', [DashboardController::class , 'create']);
 
+/* redirect */
 Route::get('/dashboardappoin', [DashboardappoiController::class , 'index'])
 ->middleware(['auth'])->name('dashboard');
 
