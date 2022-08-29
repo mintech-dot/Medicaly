@@ -19,7 +19,6 @@
                   <button class=" text-white bg-[#ff748e] border-0 py-2 px-6 focus:outline-none hover:bg-[#fc8da1] rounded-full text-lg">Back to Home</button>
                 </a>
                 </div>
-                
               </div>
             </div>
           </section>
