@@ -8,17 +8,17 @@
 
     <link href="https://tailwindcomponents.com/css/component.dashboard-template.css" rel="stylesheet">
     <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet">
-	<!--Replace with your tailwind.css once created-->
-  
+	
+    <!--Replace with your tailwind.css once created-->
     <script src="https://cdn.tailwindcss.com"></script>    
 
 	<!--Regular Datatables CSS-->
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" />
-     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css" />
-     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css" />
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
     </style>
-
+	
     <style>
 		/*Overrides for Tailwind CSS */
 
@@ -110,11 +110,9 @@
 			/*bg-indigo-500*/
 		}
 	</style>
-
-
-
-
 </head>
+
+
 <body style="background: #edf2f7;" class="font-['cairo']">
 
 
@@ -129,7 +127,7 @@
               
               
                   <!-- jQuery -->
-                  < <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
      <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
      <script src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
@@ -137,6 +135,8 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
      <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
      <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+     
+     <!-- export data -->
      <script type="text/javascript">
          $(function () {
              $('#example').DataTable({
