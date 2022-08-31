@@ -6,8 +6,7 @@
 <section class="text-gray-600 body-font relative">
   <div class="container px-5 py-24 mx-auto border-width: 1px bg-white shadow-xl rounded pt-6 pb-8">
     <div class="flex flex-col text-center w-full mb-12 ">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.</p>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Appointement</h1>
     </div>
     <div class="lg:w-1/2 md:w-2/3 mx-auto">
     <form action="/orders/store" method="post">
@@ -16,13 +15,13 @@
         <div class="p-2 w-1/2">
           <div class="relative">
             <label for="name" class="leading-7 text-sm text-gray-600">Full name</label>
-            <input type="text"  name="fname" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-[#044D5E] focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+            <input type="text"  name="fname"  class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-[#044D5E] focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
           </div>
         </div>
         <div class="p-2 w-1/2">
           <div class="relative">
             <label for="email" class="leading-7 text-sm text-gray-600">Address</label>
-            <input type="email"  name="address" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-[#044D5E] focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+            <input type="text"  name="address" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-[#044D5E] focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
           </div>
         </div>
 
@@ -35,7 +34,7 @@
         <div class="p-2 w-1/2">
           <div class="relative">
             <label for="email" class="leading-7 text-sm text-gray-600">Clinic Name</label>
-            <input type="email"  name="med" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-[#044D5E] focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+            <input type="text"  name="med" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-[#044D5E] focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
           </div>
         </div>
 
