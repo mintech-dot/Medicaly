@@ -65,6 +65,17 @@
                             class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10"
                             style="display: none;">
                             <!-- Authentication -->
+                <form method="GET" action="/">
+                    @csrf
+
+                    <x-responsive-nav-link 
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Home') }}
+                    </x-responsive-nav-link>
+                    
+                </form>
+                
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
@@ -73,6 +84,7 @@
                                         this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
+                    
                 </form>   
                         </div>
                     </div>
