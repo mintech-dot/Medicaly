@@ -45,13 +45,13 @@
         <h1 class="title-font xl:text-4xl text-3xl font-bold bg-clip-text text-[#044D5E]"> Search Now !</h1>
     </div>
     <div class="px-8 md:px-16 sm:px-36 lg:px-64">
-    <form>   
+    <form > 
     <label for="default-search" class="mb-2 text-sm font-medium text-gray-600 sr-only ">Search</label>
     <div class="relative">
         <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
             <svg aria-hidden="true" class="w-5 h-5 text-gray-500 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
         </div>
-        <input type="search" id="default-search" class="block p-4 pl-10 w-full text-sm text-gray-600 bg-gray-50 rounded-lg border border-gray-300 focus:ring-[#06687e] focus:border-[#06687e]" placeholder="Search Places, Nouns,..." required="">
+        <input type="search" name="search" id="default-search" class="block p-4 pl-10 w-full text-sm text-gray-600 bg-gray-50 rounded-lg border border-gray-300 focus:ring-[#06687e] focus:border-[#06687e]" placeholder="Search Places, Nouns,..." required="">
         <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-[#044D5E] hover:bg-[#06687e] focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-4 py-2 ">Search</button>
     </div>
     </form>
@@ -67,6 +67,10 @@
                 <img src="{{ URL('img/orders.svg') }}" class="w-16 m-auto" width="512" height="512" >
                 <h4 class="text-2xl text-gray-600 font-medium transition group-hover:text-[#044D5E]">{{$p->name}}</h4>
                 <p class="text-gray-600">{{$p->description}}</p>
+                <p class="text-gray-600">Place : {{$p->place}}</p>
+                <p class="text-gray-600">Time of work : {{$p->worktime}}</p>
+                <p class="text-gray-600">Email : {{$p->email}}</p>
+                <p class="text-gray-600">Phone Number : {{$p->p_number}}</p>
                 <a href="orders" class="ml-4 inline-flex">
                 <button class=" text-white bg-[#044D5E] border-0 py-2 px-6 focus:outline-none hover:bg-[#06687e] rounded text-lg">Order now</button>  
                 </a>
@@ -84,6 +88,8 @@
       <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-[#044D5E]">Contact Us</h1>
       <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Feel free to contact us and to give feedbacks</p>
     </div>
+    <form action="/contact" method="post">
+      @csrf
     <div class="lg:w-1/2 md:w-2/3 mx-auto">
       <div class="flex flex-wrap -m-2">
         <div class="p-2 w-1/2">
@@ -105,11 +111,12 @@
           </div>
         </div>
         <div class="p-2 w-full">
-          <button class="flex mx-auto text-white bg-[#ff748e] border-0 py-2 px-8 focus:outline-none hover:bg-[#fc8da1] rounded text-lg">Contact Us</button>
+          <button type="submit" class="flex mx-auto text-white bg-[#ff748e] border-0 py-2 px-8 focus:outline-none hover:bg-[#fc8da1] rounded text-lg">Contact Us</button>
         </div>
         
       </div>
     </div>
+</form>
   </div>
 </section>
 
