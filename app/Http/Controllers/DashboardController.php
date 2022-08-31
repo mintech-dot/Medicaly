@@ -20,7 +20,7 @@ class DashboardController extends Controller
         $joinusUpdate = array();
         $joinus = DB::table('joinus')->get();
         
-        // send data to view index
+        // mengirim data pegawai ke view index
         return view('dashboard', ['joinus' => $joinus] , ['joinusUpdate' => $joinusUpdate]);
     }
 
@@ -29,28 +29,14 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-        $joinus = DB::table('joinus')->where('confirmation', '=', 'on')->get();
-        return view('welcome' , compact('joinus'));
-    }
-
-
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit($id)
     {
         //
         $joinusUpdate = DB::table('joinus') ->where('id', $id)->get();
         $joinus = DB::table('joinus')->get();
 
-        //send data to view index
+        // mengirim data pegawai ke view index
         return view('dashboard', ['joinusUpdate' => $joinusUpdate] , ['joinus' => $joinus] );
 
     }
