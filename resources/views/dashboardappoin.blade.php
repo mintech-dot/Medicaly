@@ -66,7 +66,18 @@
                         <div x-show="dropdownOpen"
                             class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10"
                             style="display: none;">
-                            <form method="POST" action="{{ route('logout') }}">
+                            <form method="GET" action="/">
+                    @csrf
+
+                    <x-responsive-nav-link 
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Home') }}
+                    </x-responsive-nav-link>
+                    
+                </form>
+                
+                <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
                     <x-responsive-nav-link :href="route('logout')"
@@ -74,7 +85,8 @@
                                         this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
-                </form> 
+                    
+                </form>
             </div>
                     </div>
                 </div>
